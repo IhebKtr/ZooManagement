@@ -30,6 +30,6 @@ public class ZooManagement {
         scanner.close();
 
 
-        System.out.println("Le zoo " + zoo.zooName + " contient " + zoo.nbrCages + " cages.");
+        System.out.println(zoo.zooName + " comporte " + zoo.nbrCages + " cages.");
     }
 }
