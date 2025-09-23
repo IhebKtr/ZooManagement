@@ -1,35 +1,56 @@
 import java.util.Scanner;
 
 public class ZooManagement {
-    int nbrCages;
-    String zooName;
-
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        ZooManagement zoo = new ZooManagement();
-        do {
-            System.out.print("Entrez le nom du zoo : ");
-            zoo.zooName = scanner.nextLine().trim();
-            if (zoo.zooName.isEmpty()) {
-                System.out.println(" Le nom du zoo ne peut pas etre vide");
-            }
-        } while (zoo.zooName.isEmpty());
-        do {
-            System.out.print("entrez le nombre de cages : ");
-            while (!scanner.hasNextInt()) {
-                System.out.println("  entrer un entier ");
-                scanner.next();
-            }
-            zoo.nbrCages = scanner.nextInt();
+        //int nbrCages = 20;
+        // String zooName = "my zoo";
+        // System.out.println(zooName+" comporte "+nbrCages+" cages");
+/*
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter le nombre de cages ");
+        int nbrCages = sc.nextInt();
+        System.out.println("enter le nom du zoo");
+        String zooName = sc.next();
+        System.out.println(zooName+" comporte "+nbrCages+" cages");
+*/
 
-            if (zoo.nbrCages <= 0) {
-                System.out.println("nombre de cages doit être positif");
-            }
-        } while (zoo.nbrCages <= 0);
+        Animal lion = new Animal("cats","simba",10,true);
+      /*  lion.family="cats";
+        lion.name="lion";
+        lion.age=10;
+        lion.isMammal=true;
+    */
 
-        scanner.close();
+        Zoo myZoo = new Zoo("tounes","ben arous");
 
+        /*
+        myZoo.name="tounes";
+        myZoo.city="ben arous";
+        myZoo.nbrCages=25;
+         myZoo.animals = new Animal[25]*/
 
-        System.out.println(zoo.zooName + " comporte " + zoo.nbrCages + " cages.");
+        // myZoo.displayZoo();
+        // System.out.println(myZoo);
+        // System.out.println(myZoo.toString());
+
+        //  lion.displayAnimal();
+        // System.out.println(lion.toString());
+        Animal tiger = new Animal("cats","tiger",11,true);
+        System.out.println(myZoo.addAnimal(tiger));
+        System.out.println(myZoo.addAnimal(lion));
+        Animal tigerNoir = new Animal("cats","tiger",11,true);
+        myZoo.displayAnimals();
+        System.out.println(myZoo.searchAnimal(tiger));
+        Animal dog2 = new Animal("Canine", "Snoopy", 2, true);
+        System.out.println(myZoo.searchAnimal(lion));
+        System.out.println(myZoo.removeAnimal(lion));
+
+        System.out.println(myZoo.isZooFull());
+
+        Zoo myZoo2 = new Zoo("usazoo","los angles");
+        Zoo myZoo3 = new Zoo("tunzoo","ariana");
+
+        System.out.println(Zoo.comparerZoo(myZoo2,myZoo3));
+
     }
 }
