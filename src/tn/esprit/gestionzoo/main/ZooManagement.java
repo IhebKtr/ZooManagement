@@ -1,4 +1,7 @@
-import java.util.Scanner;
+package tn.esprit.gestionzoo.main;
+
+import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.entities.Zoo;
 
 public class ZooManagement {
     public static void main(String[] args) {
@@ -27,7 +30,7 @@ public class ZooManagement {
         myZoo.name="tounes";
         myZoo.city="ben arous";
         myZoo.nbrCages=25;
-         myZoo.animals = new Animal[25]*/
+         myZoo.animals = new tn.esprit.gestionzoo.entities.Animal[25]*/
 
         // myZoo.displayZoo();
         // System.out.println(myZoo);
