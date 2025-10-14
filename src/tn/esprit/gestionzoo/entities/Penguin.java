@@ -30,4 +30,9 @@ public class Penguin extends Aquatic {
                 ", isMammal=" + isMammal +
                 '}';
     }
+
+    @Override
+    public void swim() {
+        System.out.println("This penguin is swimming.");
+    }
 }

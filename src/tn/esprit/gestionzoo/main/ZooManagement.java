@@ -69,8 +69,16 @@ public class ZooManagement {
         System.out.println(dolphin);
         System.out.println(penguin);
 
-        aquaticAnimal.swim();
-        dolphin.swim();
-        penguin.swim();
+        // Instruction 26: Add aquatic animals to the zoo
+        myZoo.addAquaticAnimal(aquaticAnimal);
+        myZoo.addAquaticAnimal(dolphin);
+        myZoo.addAquaticAnimal(penguin);
+
+        // Instruction 27: Display swim() method for all aquatic animals
+        System.out.println("\n--- Aquatic Animals Swimming ---");
+        for (int i = 0; i < myZoo.getAquaticAnimalCount(); i++) {
+            myZoo.getAquaticAnimals()[i].swim();
+        }
+        System.out.println("--- End Aquatic Animals Swimming ---\n");
     }
 }
