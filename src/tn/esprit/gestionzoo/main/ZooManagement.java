@@ -59,7 +59,7 @@ public class ZooManagement {
 
         System.out.println(Zoo.comparerZoo(myZoo2,myZoo3));
 
-        Aquatic aquaticAnimal = new Aquatic("Fish", "Nemo", 1, false, "Ocean");
+        Aquatic aquaticAnimal = new Dolphin("Fish", "Nemo", 1, false, "Ocean", 5.0f); // Changed to Dolphin as Aquatic is abstract
         Terrestrial terrestrialAnimal = new Terrestrial("Mammal", "Elephant", 15, true, 4);
         Dolphin dolphin = new Dolphin("Fish", "Flipper", 5, true, "Ocean", 25.5f);
         Penguin penguin = new Penguin("Bird", "Skipper", 3, false, "Antarctica", 10.2f);
@@ -79,6 +79,6 @@ public class ZooManagement {
         for (int i = 0; i < myZoo.getAquaticAnimalCount(); i++) {
             myZoo.getAquaticAnimals()[i].swim();
         }
-        System.out.println("--- End Aquatic Animals Swimming ---\n");
+        );
     }
 }
