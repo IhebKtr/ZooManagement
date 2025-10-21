@@ -79,6 +79,18 @@ public class ZooManagement {
         for (int i = 0; i < myZoo.getAquaticAnimalCount(); i++) {
             myZoo.getAquaticAnimals()[i].swim();
         }
-        );
+        System.out.println("--- End Aquatic Animals Swimming ---\n");
+        // Instruction 29: Display max penguin swimming depth
+        System.out.println("Max Penguin Swimming Depth: " + myZoo.maxPenguinSwimmingDepth() + " meters");
+
+        // Instruction 30: Display number of aquatics by type
+        myZoo.displayNumberOfAquaticsByType();
+
+        // Instruction 31: Test equals method
+        Aquatic aquaticAnimal2 = new Dolphin("Fish", "Nemo", 1, false, "Ocean", 5.0f);
+        System.out.println("aquaticAnimal.equals(aquaticAnimal2): " + aquaticAnimal.equals(aquaticAnimal2));
+
+        Aquatic aquaticAnimal3 = new Dolphin("Fish", "Dory", 1, false, "Ocean", 5.0f);
+        System.out.println("aquaticAnimal.equals(aquaticAnimal3): " + aquaticAnimal.equals(aquaticAnimal3));
     }
 }
