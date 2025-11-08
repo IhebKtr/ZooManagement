@@ -1,11 +1,13 @@
 package tn.esprit.gestionzoo.entities;
 
+import tn.esprit.gestionzoo.entities.InvalidAgeException;
+
 public class Zoo {
     private Animal [] animals;
     private Aquatic[] aquaticAnimals; // Instruction 25
     private String name;
     private String city;
-    private final int nbrCages=25;
+    private final int nbrCages=3;
     private int animalCount;
     private int nbrAnimals;
     private int aquaticAnimalCount; // To keep track of aquatic animals
@@ -38,14 +40,15 @@ public class Zoo {
         return "nom de zoo : "+name+ " city :"+city+" num de cages"+nbrCages;
     }
 
-    public boolean addAnimal(Animal animal) {
-        if (isZooFull()) {
-            System.out.println("Impossible d’ajouter, le zoo est plein !");
-            return false;
+    public void addAnimal(Animal animal) throws ZooFullException, InvalidAgeException {
+        if (animal.getAge() < 0) {
+            throw new InvalidAgeException("Animal age cannot be negative.");
+        }
+        if (animalCount >= nbrCages) {
+            throw new ZooFullException("The zoo is full. Cannot add more animals.");
         }
         animals[animalCount] = animal;
         animalCount++;
-        return true;
     }
 
     public void displayAnimals(){
@@ -76,6 +79,10 @@ public class Zoo {
         }
         return false;
     }
+    public int getAnimalCount() {
+        return animalCount;
+    }
+
     public boolean isZooFull(){
         return animalCount >= nbrCages;
     }

@@ -6,6 +6,8 @@ import tn.esprit.gestionzoo.entities.Aquatic;
 import tn.esprit.gestionzoo.entities.Terrestrial;
 import tn.esprit.gestionzoo.entities.Dolphin;
 import tn.esprit.gestionzoo.entities.Penguin;
+import tn.esprit.gestionzoo.entities.InvalidAgeException;
+import tn.esprit.gestionzoo.entities.ZooFullException;
 
 public class ZooManagement {
     public static void main(String[] args) {
@@ -43,9 +45,49 @@ public class ZooManagement {
         //  lion.displayAnimal();
         // System.out.println(lion.toString());
         Animal tiger = new Animal("cats","tiger",11,true);
-        System.out.println(myZoo.addAnimal(tiger));
-        System.out.println(myZoo.addAnimal(lion));
+        try {
+            myZoo.addAnimal(tiger);
+            System.out.println("Animal count: " + myZoo.getAnimalCount());
+        } catch (ZooFullException e) {
+            System.out.println(e.getMessage());
+        } catch (InvalidAgeException e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            myZoo.addAnimal(lion);
+            System.out.println("Animal count: " + myZoo.getAnimalCount());
+        } catch (ZooFullException e) {
+            System.out.println(e.getMessage());
+        } catch (InvalidAgeException e) {
+            System.out.println(e.getMessage());
+        }
         Animal tigerNoir = new Animal("cats","tiger",11,true);
+        try {
+            myZoo.addAnimal(tigerNoir);
+            System.out.println("Animal count: " + myZoo.getAnimalCount());
+        } catch (ZooFullException e) {
+            System.out.println(e.getMessage());
+        } catch (InvalidAgeException e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            myZoo.addAnimal(new Animal("Canine", "Snoopy", 2, true));
+            System.out.println("Animal count: " + myZoo.getAnimalCount());
+        } catch (ZooFullException e) {
+            System.out.println(e.getMessage());
+        } catch (InvalidAgeException e) {
+            System.out.println(e.getMessage());
+        }
+        // Test with negative age
+        Animal invalidAgeAnimal = new Animal("Invalid", "Invalid", -5, true);
+        try {
+            myZoo.addAnimal(invalidAgeAnimal);
+            System.out.println("Animal count: " + myZoo.getAnimalCount());
+        } catch (ZooFullException e) {
+            System.out.println(e.getMessage());
+        } catch (InvalidAgeException e) {
+            System.out.println(e.getMessage());
+        }
         myZoo.displayAnimals();
         System.out.println(myZoo.searchAnimal(tiger));
         Animal dog2 = new Animal("Canine", "Snoopy", 2, true);
