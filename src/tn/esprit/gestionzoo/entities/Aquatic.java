@@ -1,6 +1,9 @@
 package tn.esprit.gestionzoo.entities;
 
-public abstract class Aquatic extends Animal {
+import tn.esprit.gestionzoo.entities.Food;
+import tn.esprit.gestionzoo.entities.Carnivore;
+
+public abstract class Aquatic extends Animal implements Carnivore<Food> {
     protected String habitat;
 
     public Aquatic() {
@@ -47,5 +50,9 @@ public abstract class Aquatic extends Animal {
         result = 31 * result + age;
         result = 31 * result + habitat.hashCode();
         return result;
+    }
+    @Override
+    public void eatMeat(Food meat) {
+        System.out.println("Aquatic animal " + name + " is eating " + meat);
     }
 }
