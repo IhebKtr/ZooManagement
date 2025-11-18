@@ -135,19 +135,17 @@ public class ZooManagement {
 
         Aquatic aquaticAnimal3 = new Dolphin("Fish", "Dory", 1, false, "Ocean", 5.0f);
         System.out.println("aquaticAnimal.equals(aquaticAnimal3): " + aquaticAnimal.equals(aquaticAnimal3));
-    }
+        // Instruction 38: Test implemented methods
+        Aquatic testAquatic = new Dolphin("Fish", "TestDolphin", 2, true, "Ocean", 10.0f);
+        Terrestrial testTerrestrial = new Terrestrial("Mammal", "TestElephant", 10, true, 4);
+        Penguin testPenguin = new Penguin("Bird", "TestPenguin", 4, false, "Antarctica", 8.5f);
 
-                                // Instruction 38: Test implemented methods
-                                Aquatic testAquatic = new Dolphin("Fish", "TestDolphin", 2, true, "Ocean", 10.0f);
-                                Terrestrial testTerrestrial = new Terrestrial("Mammal", "TestElephant", 10, true, 4);
-                                Penguin testPenguin = new Penguin("Bird", "TestPenguin", 4, false, "Antarctica", 8.5f);
-                        
-                                System.out.println("\n--- Testing Carnivore and Omnivore methods ---");
-                                testAquatic.eatMeat(Food.MEAT);
-                                testTerrestrial.eatPlant(Food.PLANT);
-                                testTerrestrial.eatMeat(Food.MEAT);
-                                testTerrestrial.eatPlantAndMeet(Food.BOTH);
-                                // Penguin also implements Carnivore through Aquatic
-                                testPenguin.eatMeat(Food.MEAT);
-                                System.out.println("--- End Testing Carnivore and Omnivore methods ---");
-                            }
+        System.out.println("\n--- Testing Carnivore and Omnivore methods ---");
+        testAquatic.eatMeat(Food.MEAT);
+        testTerrestrial.eatPlant(Food.PLANT);
+        testTerrestrial.eatMeat(Food.MEAT);
+        testTerrestrial.eatPlantAndMeet(Food.BOTH);
+        // Penguin also implements Carnivore through Aquatic
+        testPenguin.eatMeat(Food.MEAT);
+        System.out.println("--- End Testing Carnivore and Omnivore methods ---");
+    }

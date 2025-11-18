@@ -16,6 +16,7 @@ public class DepartementHashSet implements IDepartement<Departement> {
         departements.add(departement);
     }
 
+
     @Override
     public boolean rechercherDepartement(String nom) {
         for (Departement departement : departements) {

@@ -10,6 +10,12 @@ public class Departement implements Comparable<Departement> {
     public Departement() {
     }
 
+    public Departement(int id, String nomDepartement) {
+        this.id = id;
+        this.nomDepartement = nomDepartement;
+        this.nombreEmployes = 0; // Default to 0 when not provided
+    }
+
     public Departement(int id, String nomDepartement, int nombreEmployes) {
         this.id = id;
         this.nomDepartement = nomDepartement;
